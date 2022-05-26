@@ -1,9 +1,19 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const http = require("http");
+app.use(cors());
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-const io = new Server(server);
+const io = new Server(server, {
+  transports: ["polling", "websocket"],
+  cors: {
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    allowedHeaders: "Content-Type, Authorization, X-Requested-With, Accept",
+    credentials: true,
+  },
+});
 const Mpesa = require("mpesa-api").Mpesa;
 
 // create a new instance of the api
