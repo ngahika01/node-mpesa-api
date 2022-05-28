@@ -20,7 +20,11 @@ const Mpesa = require("mpesa-api").Mpesa;
 
 app.use(express.json());
 
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+app.get("/mpesa", async (req, res) => {
   const credentials = {
     clientKey: "mqqp3uSNua7xivju5t32jdA7EHyWoQZr",
     clientSecret: "vxG40BsJ9e68hiOm",
