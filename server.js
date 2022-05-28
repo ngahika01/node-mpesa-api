@@ -43,7 +43,7 @@ app.get("/mpesa", async (req, res) => {
       PartyA: 254729842998,
       PhoneNumber: 254729842998,
       PartyB: 174379,
-      CallBackURL: "https://git.heroku.com/node-mpesa.git/callback",
+      CallBackURL: "https://node-mpesa.herokuapp.com/callback",
       AccountReference: "Hotel booking app",
       passKey:
         "bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919",
